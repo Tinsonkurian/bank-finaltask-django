@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    newpage
+{% endblock title %}
+    
+
+{% block body %}
+    <div class="container">
+        <div class="card bg-dark text-white">
+            <img src="https://www.integrityks.bank/assets/images/og/8077c2603881432f941c3f8de1c11d24.png" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title fs-1 fw-bold mt-2 ms-5 text-end me-3">
+                {% if user.is_authenticated  %}
+                Welcome, {{user.username}}
+            {% else %}
+                Welcome
+            {% endif %}
+              </h5>
+              <p class="card-text fs-3 ms-5 fst-italic ">Add Details of the user</p>    
+
+              <!-- <p class="card-text">Last updated 3 mins ago</p> -->
+              <a href="{% url 'form' %}"><button class="btn btn-info ms-5 text-end" >Add Details</button></a>
+              
+            </div>
+        </div>
+        
+        
+            
+    </div>
+{% endblock body %}
+    

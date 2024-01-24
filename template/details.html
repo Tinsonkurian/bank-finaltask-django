@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+details
+{% endblock title %}
+
+
+{% block body %}
+<div class="row">
+    <div class="col-2 ms-2">
+        <ul class="list-group">
+            <h4>{{distname}}</h4>
+            {% for branch in branch %}
+                <li class="list-group-item">
+                    <a class="text-decoration-none" href="https://en.wikipedia.org/wiki/{{branch.branch_name}}" target="_blank">
+                    {{branch.branch_name}}
+                </a></li>
+
+            {% endfor %}
+                
+            
+        </ul>
+    </div>
+    <div class="col-9">
+        <iframe class="responsive-iframe" src="https://en.wikipedia.org/wiki/{{distname}}"
+        height="500px" width="1100px">
+</iframe>
+       
+            
+       
+    </div>
+</div>
+{% endblock body %}
